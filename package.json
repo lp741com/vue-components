@@ -1,33 +1,60 @@
 {
   "name": "lp741-vue-components",
-  "private": true,
-  "version": "1.0.0",
+  "private": false,
+  "version": "1.0.6",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/lp741-vue-components.umd.cjs",
-  "module": "./dist/lp741-vue-components.js",
+  "main": "dist/lp741-vue-components.umd.cjs",
+  "module": "dist/lp741-vue-components.js",
   "exports": {
     ".": {
+      "types": "./dist/types.d.ts",
       "import": "./dist/lp741-vue-components.js",
       "require": "./dist/lp741-vue-components.umd.cjs"
     },
     "./style.css": "./dist/style.css"
   },
-  "types": "./dist/index.d.ts",
+  "types": "./dist/types.d.ts",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,vue}": "eslint --fix",
+    "*.{css,scss,vue}": "stylelint --fix",
+    "*": "prettier -w -u"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vue-tsc --emitDeclarationOnly",
-    "types": "vue-tsc ",
-    "preview": "vite preview"
+    "build": "vite build && npm run generate:types",
+    "generate:types": "vue-tsc --declaration --emitDeclarationOnly --outdir ./dist",
+    "preview": "vite preview",
+    "lint:markup": "vue-tsc --noEmit",
+    "lint:script": "eslint --ext .ts,vue --ignore-path .gitignore .",
+    "lint:style": "stylelint src/**/*.{css,scss,vue}"
   },
   "dependencies": {
     "vue": "^3.3.4"
   },
   "devDependencies": {
     "@types/node": "^20.8.2",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
     "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "@vue/eslint-config-typescript": "^12.0.0",
+    "eslint": "^8.50.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
+    "stylelint": "^15.10.3",
+    "stylelint-config-recommended": "^13.0.0",
+    "stylelint-config-standard": "^34.0.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vue-tsc": "^1.8.5"

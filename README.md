@@ -5,15 +5,21 @@ Set of useful components for Vue3
 ## 1. InputPin
 
 ```vue
-<InputPin
-  numeberOfDigits="6"
-  v-model="otp"
-  border-color="#9CA3AF"
-  focused-border-color="#FCD34D"
-  border-width="4px"
-  radius="12px"
-  bg-color="#efefef"
-></InputPin>
+<script setup>
+  import InputPin from 'lp741-vue-components';
+</script>
+<template>
+  <InputPin
+      numeberOfDigits="6"
+      v-model="otp"
+      border-color="#9CA3AF"
+      focused-border-color="#FCD34D"
+      border-width="4px"
+      radius="12px"
+      bg-color="#efefef"
+  ></InputPin>  
+</template>
+
 ```
 
 ### Options:
