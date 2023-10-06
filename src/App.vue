@@ -3,12 +3,13 @@
     <form class="form-test" @submit="submit">
       <h1>Code input example</h1>
       <InputPin
+        class="input-pin flex-1"
         numeberOfDigits="6"
         v-model="otp"
         border-color="#9CA3AF"
         focused-border-color="#FCD34D"
         border-width="3px"
-        radius="12px"
+        radius="250px"
         bg-color="#efefef"
       ></InputPin>
       <div class="code-box">{{ otp }}</div>
@@ -57,6 +58,17 @@
     font-size: 3rem;
     padding: 1rem 2rem;
     font-family: 'Courier New', sans-serif;
+  }
+
+  .flex-1 {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .input-pin {
+    max-width: 320px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   @media screen and (min-width: 1024px) {

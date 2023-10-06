@@ -1,8 +1,9 @@
 {
   "name": "lp741-vue-components",
   "private": false,
-  "version": "1.0.6",
+  "version": "1.0.8",
   "type": "module",
+  "repository": "https://github.com/lp741com/vue-components",
   "files": [
     "dist"
   ],

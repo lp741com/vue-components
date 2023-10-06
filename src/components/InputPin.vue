@@ -121,14 +121,19 @@
 <style scoped>
   ul {
     display: flex;
-    gap: 0.2rem;
+    gap: 0.1rem;
     list-style: none;
     padding: 0;
+    justify-content: space-between;
   }
 
   ul li {
-    width: 2.2rem;
-    height: 2.2rem;
+    width: calc(100% / 6);
+    padding-top: calc(100% / 6);
+    position: relative;
+  }
+
+  ul li .input-value {
     background-color: v-bind(bgColor);
     border: v-bind(borderWidth) solid v-bind(borderColor);
     display: flex;
@@ -136,10 +141,14 @@
     inset-inline: unset;
     border-radius: v-bind(radius);
     cursor: pointer;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
   }
 
-  ul li.focused {
+  ul li.focused .input-value {
     border-color: v-bind(focusedBorderColor);
   }
 
@@ -149,17 +158,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Arial';
-    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+    font-size: 100%;
     color: v-bind(color);
   }
 
   .invisible-input {
-    width: 2.2rem;
-    height: 2.2rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
     border-radius: 250px;
     opacity: 0;
-    position: absolute;
     top: -0.25rem;
     left: -0.25rem;
     text-align: center;
@@ -168,11 +177,6 @@
   @media screen and (min-width: 1024px) {
     ul {
       gap: 0.2rem;
-    }
-
-    ul li {
-      width: 4rem;
-      height: 4rem;
     }
 
     .input-value {
