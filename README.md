@@ -2,9 +2,12 @@
 
 Set of useful components for Vue3
 
+[Demo](https://main.d9w2jiey2s1bk.amplifyapp.com/)
+
 ## 1. InputPin
 
 ```vue
+
 <script setup>
   import InputPin from 'lp741-vue-components';
 </script>
@@ -17,7 +20,7 @@ Set of useful components for Vue3
       border-width="4px"
       radius="12px"
       bg-color="#efefef"
-  ></InputPin>  
+  ></InputPin>
 </template>
 
 ```
@@ -27,34 +30,49 @@ Set of useful components for Vue3
 ```javascript
   numberOfDigits: {
     type: Number,
-    default: 6
-  },
-  modelValue: {
+default:
+    6
+}
+,
+modelValue: {
     type: String,
-    default: ''
-  },
-  borderColor: {
+default:
+    ''
+}
+,
+borderColor: {
     type: String,
-    default: '#000'
-  },
-  focusedBorderColor: {
+default:
+    '#000'
+}
+,
+focusedBorderColor: {
     type: String,
-    default: '#3B82F6'
-  },
-  bgColor: {
+default:
+    '#3B82F6'
+}
+,
+bgColor: {
     type: String,
-    default: '#FFFFFF'
-  },
-  color: {
+default:
+    '#FFFFFF'
+}
+,
+color: {
     type: String,
-    default: 'inherit'
-  },
-  radius: {
+default:
+    'inherit'
+}
+,
+radius: {
     type: String,
-    default: '100%'
-  },
-  borderWidth: {
+default:
+    '100%'
+}
+,
+borderWidth: {
     type: String,
-    default: '3px'
-  }
+default:
+    '3px'
+}
 ```
